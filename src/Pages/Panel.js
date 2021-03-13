@@ -34,7 +34,7 @@ export default function Panel() {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [allCars]);
 
   return (
     <>
