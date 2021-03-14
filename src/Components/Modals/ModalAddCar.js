@@ -17,9 +17,10 @@ export default function ModalAddCar(props) {
     setSector,
     showModalAddCar,
     setShowModalAddCar,
-    addCarOnDB,
-    setAddCarOnDB,
-    allCars,
+    maintenance1,
+    reserve1,
+    setReserve,
+    wash1,
   } = props;
 
   function handleClose() {
@@ -30,10 +31,12 @@ export default function ModalAddCar(props) {
       brand: brand1,
       color: color1,
       licencePlate: licencePlate1,
+      maintenance: maintenance1,
       model: model1,
       sector: sector1,
+      wash: wash1,
+      reserve: reserve1,
     };
-    setAddCarOnDB([...allCars, newCar]);
     addCar(newCar);
     setShowModalAddCar(false);
   }
@@ -83,7 +86,6 @@ export default function ModalAddCar(props) {
               onChange={(e) => setLicencePlate(e.target.value)}
             />
           </Form.Group>
-
           <Form.Group controlId="formGridAddress2">
             <Form.Label>Modelo</Form.Label>
             <Form.Control
@@ -93,23 +95,50 @@ export default function ModalAddCar(props) {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Setor</Form.Label>
-            <Form.Control
-              type="checkbox"
-              value={sector1}
-              onClick={() => setSector(!sector1)}
-            />
+            {reserve1 === true ? (
+              <i
+                className="material-icons"
+                style={{ cursor: "pointer" }}
+                onClick={() => setReserve(!reserve1)}
+              >
+                check_box
+              </i>
+            ) : (
+              <i
+                className="material-icons"
+                style={{ cursor: "pointer" }}
+                onClick={() => setReserve(!reserve1)}
+              >
+                check_box_outline_blank
+              </i>
+            )}{" "}
+            <Form.Label>Disponibilidade para Reserva</Form.Label>
+          </Form.Group>
+          <Form.Group>
+            {sector1 === true ? (
+              <i
+                className="material-icons"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSector(!sector1)}
+              >
+                check_box
+              </i>
+            ) : (
+              <i
+                className="material-icons"
+                style={{ cursor: "pointer" }}
+                onClick={() => setSector(!sector1)}
+              >
+                check_box_outline_blank
+              </i>
+            )}{" "}
+            <Form.Label>Prioridade para Setor</Form.Label>
           </Form.Group>
         </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={() => handleClose()}>Close</Button>
-        <Button
-          variant="success"
-          onClick={() =>
-            handleAdd(brand1, color1, licencePlate1, model1, sector1)
-          }
-        >
+        <Button variant="success" onClick={() => handleAdd()}>
           Adicionar
         </Button>
       </Modal.Footer>

@@ -6,6 +6,7 @@ import Cards from "../Components/Cards/Cards";
 import TableCars from "../Components/Table/TableCars";
 
 import ModalAddCar from "../Components/Modals/ModalAddCar";
+import ModalDeleteCar from "../Components/Modals/ModalDeleteCar";
 
 import { AiOutlineSearch } from "react-icons/ai";
 
@@ -14,6 +15,7 @@ import { getAllCars } from "../Controllers/Cars";
 export default function Panel() {
   const [allCars, setAllCars] = useState([]);
   const [showModalAddCar, setShowModalAddCar] = useState(false);
+  const [showModalDeleteCar, setShowModalDeleteCar] = useState(false);
   const [toggleSpinner, setToggleSpinner] = useState(false);
 
   const [brand1, setBrand] = useState("");
@@ -21,14 +23,28 @@ export default function Panel() {
   const [licencePlate1, setLicencePlate] = useState("");
   const [model1, setModel] = useState("");
   const [sector1, setSector] = useState(false);
-
-  const [addCarOnDB, setAddCarOnDB] = useState([]);
+  const [maintenance1, setMaintenance] = useState(false);
+  const [reserve1, setReserve] = useState(true);
+  const [wash1, setWash1] = useState(false);
 
   async function getData() {
     const dataResponse = await getAllCars();
     if (dataResponse) {
       setAllCars(dataResponse);
       setToggleSpinner(true);
+    }
+  }
+
+  function searchCarOnListToRemove(licencePlate) {
+    const [carFilterToRemove] = allCars.filter(
+      (d) => d.licencePlate === licencePlate
+    );
+    if (carFilterToRemove) {
+      setShowModalDeleteCar({
+        id: carFilterToRemove.id,
+        licencePlate: carFilterToRemove.licencePlate,
+        show: true,
+      });
     }
   }
 
@@ -51,9 +67,14 @@ export default function Panel() {
         setSector={setSector}
         showModalAddCar={showModalAddCar}
         setShowModalAddCar={setShowModalAddCar}
-        addCarOnDB={addCarOnDB}
-        setAddCarOnDB={setAddCarOnDB}
-        allCars={allCars}
+        maintenance1={maintenance1}
+        reserve1={reserve1}
+        setReserve={setReserve}
+        wash1={wash1}
+      />
+      <ModalDeleteCar
+        showModalDeleteCar={showModalDeleteCar}
+        setShowModalDeleteCar={setShowModalDeleteCar}
       />
       <Container fluid>
         <div className="text-center" style={{ backgroundColor: "orange" }}>
@@ -71,7 +92,10 @@ export default function Panel() {
               />
             </Row>
           ) : (
-            <TableCars allCars={allCars} />
+            <TableCars
+              allCars={allCars}
+              searchCarOnListToRemove={searchCarOnListToRemove}
+            />
           )}
         </div>
       </Container>
