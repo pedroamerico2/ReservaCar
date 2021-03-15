@@ -6,7 +6,7 @@ import firebaseConfig from "../../Config/FirebaseConfig";
 import "./Styles/Header.css";
 
 export default function Header() {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, userData } = useContext(AuthContext);
   return (
     <>
       {!!currentUser && (
@@ -31,7 +31,7 @@ export default function Header() {
               </Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link>More deets</Nav.Link>
+              <Nav.Link>{"Bem vindo: " + userData.name}</Nav.Link>
               <Nav.Link onClick={() => firebaseConfig.auth().signOut()}>
                 Sair
               </Nav.Link>

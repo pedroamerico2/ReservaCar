@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Container fluid>
-        <h1>Home</h1>
+        <h1>home</h1>
       </Container>
     </>
   );

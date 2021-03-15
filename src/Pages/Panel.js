@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {} from "react-router-dom";
-import { Container, Button, Row, Spinner } from "react-bootstrap";
+import { Container, Button, Row, Spinner, FormControl } from "react-bootstrap";
 
 import Cards from "../Components/Cards/Cards";
 import TableCars from "../Components/Table/TableCars";
@@ -17,6 +17,8 @@ export default function Panel() {
   const [showModalAddCar, setShowModalAddCar] = useState(false);
   const [showModalDeleteCar, setShowModalDeleteCar] = useState(false);
   const [toggleSpinner, setToggleSpinner] = useState(false);
+
+  const [searchOnList, setSearchOnList] = useState("");
 
   const [brand1, setBrand] = useState("");
   const [color1, setColor] = useState("");
@@ -76,9 +78,22 @@ export default function Panel() {
       />
       <Container fluid>
         <div className="text-center" style={{ backgroundColor: "orange" }}>
+          <FormControl
+            type="text"
+            value={searchOnList}
+            onChange={(e) => setSearchOnList(e.target.value)}
+          />
           <AiOutlineSearch />
-          <Button onClick={() => setShowModalAddCar(!showModalAddCar)}>
-            Add Car
+          <Button
+            vatiant="success"
+            style={{ background: "none", border: "none" }}
+          >
+            <i
+              onClick={() => setShowModalAddCar(!showModalAddCar)}
+              className="material-icons"
+            >
+              library_add
+            </i>
           </Button>
         </div>
         <div className="text-center" style={{ backgroundColor: "" }}>
@@ -93,6 +108,7 @@ export default function Panel() {
             <TableCars
               allCars={allCars}
               searchCarOnListToRemove={searchCarOnListToRemove}
+              searchOnList={searchOnList}
             />
           )}
         </div>
