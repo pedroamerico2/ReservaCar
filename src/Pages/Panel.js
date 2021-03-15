@@ -35,10 +35,8 @@ export default function Panel() {
     }
   }
 
-  function searchCarOnListToRemove(licencePlate) {
-    const [carFilterToRemove] = allCars.filter(
-      (d) => d.licencePlate === licencePlate
-    );
+  function searchCarOnListToRemove(id) {
+    const [carFilterToRemove] = allCars.filter((d) => d.id === id);
     if (carFilterToRemove) {
       setShowModalDeleteCar({
         id: carFilterToRemove.id,
@@ -50,7 +48,7 @@ export default function Panel() {
 
   useEffect(() => {
     getData();
-  }, [allCars]);
+  }, []);
 
   return (
     <>

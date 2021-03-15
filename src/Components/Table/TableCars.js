@@ -50,7 +50,7 @@ export default function TableCars(props) {
               </td>
               <td width="20%">
                 <Button
-                  onClick={() => searchCarOnListToRemove(a.licencePlate)}
+                  onClick={() => searchCarOnListToRemove(a.id)}
                   className="mx-1"
                   variant="danger"
                 >
