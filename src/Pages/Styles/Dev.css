@@ -9,3 +9,14 @@ img {
     margin-top: 6.54%;
   }
 }
+@media screen and (max-width: 899px) {
+  .devFooter {
+    height: 200px !important;
+  }
+  .igual {
+    display: none;
+  }
+  .devImg {
+    width: 45% !important;
+  }
+}

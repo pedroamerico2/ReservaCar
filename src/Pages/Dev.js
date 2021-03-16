@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import {} from "react-router-dom";
+import React from "react";
 import { Container, Row } from "react-bootstrap";
 import svgLinkedin from "../Assets/iconfinder_linked-in_1302087.svg";
 import svgWhatsapp from "../Assets/iconfinder_whatsapp_1302098.svg";
@@ -13,13 +12,14 @@ export default function Dev() {
     <Container fluid className="text-center">
       <Row style={{ marginTop: "7%" }}>
         <div
-          className="mx-auto text-center"
+          className="mx-auto text-center devImg"
           style={{ width: "30%", height: "30%" }}
         >
           <img
             className="mx-auto"
             width="50%"
             height="50%"
+            alt="img Dev"
             src="https://www.w3schools.com/w3css/img_avatar3.png"
           />
           <h1 className="mx-auto">Front-End</h1>
@@ -27,7 +27,7 @@ export default function Dev() {
         </div>
         <h1 style={{ marginTop: "5%" }}>+</h1>
         <div
-          className="mx-auto text-center"
+          className="mx-auto text-center devImg"
           style={{ width: "30%", height: "30%" }}
         >
           {" "}
@@ -35,17 +35,21 @@ export default function Dev() {
             className="mx-auto"
             width="50%"
             height="50%"
+            alt="img Dev"
             src="https://www.w3schools.com/w3css/img_avatar3.png"
           />
           <h1 className="mx-auto">Back-End</h1>
           <p className="mx-auto">Américo</p>
         </div>
-        <h1 style={{ marginTop: "5%" }}>=</h1>
-        <div className="mx-auto" style={{ width: "30%", height: "30%" }}>
+        <h1 className="igual" style={{ marginTop: "5%" }}>
+          =
+        </h1>
+        <div className="mx-auto devImg" style={{ width: "30%", height: "30%" }}>
           <img
             className="mx-auto text-center"
             width="50%"
             height="50%"
+            alt="img Dev"
             src="https://www.w3schools.com/w3css/img_avatar3.png"
           />
           <h1 className="mx-auto">Full-Stack</h1>
@@ -67,21 +71,36 @@ export default function Dev() {
               style={{ height: "50px" }}
               href="https://www.linkedin.com/in/pedro-am%C3%A9rico-a3292393/"
             >
-              <img width="100%" height="100%" src={svgLinkedin} />
+              <img
+                width="100%"
+                height="100%"
+                alt="Dev Linkedin"
+                src={svgLinkedin}
+              />
             </a>
             <a
               className="mt-2 mx-auto"
               style={{ height: "50px" }}
               href="https://api.whatsapp.com/send?phone=5577988357722&text=Gostei do seu Sistema"
             >
-              <img width="100%" height="100%" src={svgWhatsapp} />
+              <img
+                width="100%"
+                height="100%"
+                alt="Dev WhatsApp"
+                src={svgWhatsapp}
+              />
             </a>
             <a
               className="mt-2 mx-auto"
               style={{ height: "50px" }}
               href="https://github.com/pedroamerico2"
             >
-              <img width="100%" height="100%" src={svgGitHub} />
+              <img
+                width="100%"
+                height="100%"
+                alt="Dev Git Hub"
+                src={svgGitHub}
+              />
             </a>
           </Row>
 
