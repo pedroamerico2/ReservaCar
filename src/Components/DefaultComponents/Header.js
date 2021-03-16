@@ -29,6 +29,9 @@ export default function Header() {
               <Nav.Link>
                 <Link to="/panel">Painel</Link>
               </Nav.Link>
+              <Nav.Link>
+                <Link to="/dev">Contato</Link>
+              </Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link>{"Bem vindo: " + userData.name}</Nav.Link>

@@ -9,6 +9,7 @@ import Header from "../Components/DefaultComponents/Header";
 import Home from "../Pages/Home";
 import Panel from "../Pages/Panel";
 import Login from "../Pages/Login";
+import Dev from "../Pages/Dev";
 
 import "../index.css";
 
@@ -19,6 +20,7 @@ export default function Routes() {
         <Header />
         <PrivateRoute exact path="/" component={Home} />
         <PrivateRoute exact path="/panel" component={Panel} />
+        <PrivateRoute exact path="/dev" component={Dev} />
         <Route exact path="/login" component={Login} />
       </Router>
     </AuthProvider>

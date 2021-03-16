@@ -1,0 +1,11 @@
+.devFooter {
+  margin-top: 14.69%;
+}
+img {
+  border-radius: 50%;
+}
+@media screen and (max-height: 900px) {
+  .devFooter {
+    margin-top: 6.54%;
+  }
+}
