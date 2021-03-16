@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Button, Form, Col, Row } from "react-bootstrap";
 
 import { addCar } from "../../Controllers/Cars";
@@ -21,6 +21,12 @@ export default function ModalAddCar(props) {
     reserve1,
     setReserve,
     wash1,
+    carImg1,
+    setCarImg,
+    setMaintenance,
+    setWash,
+    setChangeDb,
+    changeDb,
   } = props;
 
   function handleClose() {
@@ -36,10 +42,23 @@ export default function ModalAddCar(props) {
       sector: sector1,
       wash: wash1,
       reserve: reserve1,
+      carImg: carImg1,
     };
     addCar(newCar);
+    setChangeDb(!changeDb);
     setShowModalAddCar(false);
   }
+  useEffect(() => {
+    setBrand("");
+    setColor("");
+    setLicencePlate("");
+    setCarImg("");
+    setModel("");
+    setSector(false);
+    setReserve(true);
+    setMaintenance(false);
+    setWash(false);
+  }, [showModalAddCar]);
   return (
     <Modal
       show={showModalAddCar}
@@ -84,6 +103,15 @@ export default function ModalAddCar(props) {
               placeholder="XXXXXXX"
               value={licencePlate1}
               onChange={(e) => setLicencePlate(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Imagem</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="https://imigur.com/1231312"
+              value={carImg1}
+              onChange={(e) => setCarImg(e.target.value)}
             />
           </Form.Group>
           <Form.Group controlId="formGridAddress2">

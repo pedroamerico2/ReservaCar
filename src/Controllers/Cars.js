@@ -62,7 +62,7 @@ async function editCar(data, id) {
       return [];
     } else {
       await response.doc(id).set(data);
-      toast.success("Produtor " + data.name + " foi editado!", 3000);
+      toast.success("Produtor " + data.licencePlate + " foi editado!", 3000);
       return true;
     }
   } catch (err) {
@@ -71,10 +71,10 @@ async function editCar(data, id) {
   }
 }
 
-async function deleteCar(name, id) {
+async function deleteCar(licencePlate, id) {
   try {
     await response.doc(id).delete();
-    toast.success("Produtor " + name + " foi apagado!", 3000);
+    toast.success("Produtor " + licencePlate + " foi apagado!", 3000);
     return true;
   } catch (err) {
     console.log(err);

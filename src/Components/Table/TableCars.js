@@ -2,7 +2,13 @@ import React from "react";
 import { Table, Button } from "react-bootstrap";
 
 export default function TableCars(props) {
-  const { allCars, searchCarOnListToRemove, searchOnList } = props;
+  const {
+    allCars,
+    searchCarOnListToRemove,
+    searchOnList,
+    searchCarOnListToEdit,
+    searchCarOnListToPreview,
+  } = props;
   return (
     <>
       <Table striped bordered hover>
@@ -40,9 +46,13 @@ export default function TableCars(props) {
                 <td width="5%">{index + 1}</td>
                 <td width="5%">
                   {a.maintenance === true ? (
-                    <i className="material-icons">car_repair</i>
+                    <i className="material-icons" style={{ color: "red" }}>
+                      car_repair
+                    </i>
                   ) : a.wash === true ? (
-                    <i className="material-icons">local_car_wash</i>
+                    <i className="material-icons" style={{ color: "blue" }}>
+                      local_car_wash
+                    </i>
                   ) : (
                     <i className="material-icons">directions_car</i>
                   )}
@@ -66,10 +76,18 @@ export default function TableCars(props) {
                   >
                     <i className="material-icons">delete</i>
                   </Button>
-                  <Button className="mx-1" variant="warning">
+                  <Button
+                    onClick={() => searchCarOnListToEdit(a.id)}
+                    className="mx-1"
+                    variant="warning"
+                  >
                     <i className="material-icons">mode</i>
                   </Button>
-                  <Button className="mx-1" variant="info">
+                  <Button
+                    onClick={() => searchCarOnListToPreview(a.id)}
+                    className="mx-1"
+                    variant="info"
+                  >
                     <i className="material-icons">preview</i>
                   </Button>
                 </td>

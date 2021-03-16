@@ -1,16 +1,22 @@
-import React, { useState } from "react";
-import { Modal, Button, Form, Col, Row } from "react-bootstrap";
+import React from "react";
+import { Modal, Button } from "react-bootstrap";
 
 import { deleteCar } from "../../Controllers/Cars";
 
 export default function ModalDeleteCar(props) {
-  const { setShowModalDeleteCar, showModalDeleteCar } = props;
+  const {
+    setShowModalDeleteCar,
+    showModalDeleteCar,
+    setChangeDb,
+    changeDb,
+  } = props;
 
   function handleClose() {
     setShowModalDeleteCar(false);
   }
   function handleDelete() {
-    deleteCar(showModalDeleteCar.id, showModalDeleteCar.licencePlate);
+    deleteCar(showModalDeleteCar.licencePlate, showModalDeleteCar.id);
+    setChangeDb(!changeDb);
     setShowModalDeleteCar(false);
   }
 
