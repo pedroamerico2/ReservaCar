@@ -39,15 +39,14 @@ function Login({ history }) {
         <h1 className="text-center">
           <Container className="border-0">
             <img
-              src="https://www.tecnosinos.com.br/wp-content/uploads/2019/01/129-1.png"
-              width="163"
-              height="50"
-              className="d-inline-block align-top"
+              src="https://lh3.googleusercontent.com/proxy/4hKhLIJK21X62E8M8ZWii_9-EoUgLvPxGuIu0S4JFcm8SJ09GfWXYOwutreVrjjq7Fns61ggw9u2ZHoRnNQvQgw5KqzAQkCeCdSImksPTZKM1FlWvU1kQadFOhaD"
+              width="200"
+              height="100"
+              className="d-inline-block align-top mb-5 mt-5"
               alt="React Bootstrap logo"
             />
           </Container>
         </h1>
-        <h3 className="text-center my-4">Fazer login</h3>
         <Form.Group>
           <Form.Control
             name="email"

@@ -15,10 +15,10 @@ export default function Header() {
           <Navbar.Brand>
             <Link to="/">
               <img
-                src="http://sirtec.com.br/wp-content/themes/sirtec/images/sirtec_logo.png"
-                width="163"
+                src="https://lh3.googleusercontent.com/proxy/4hKhLIJK21X62E8M8ZWii_9-EoUgLvPxGuIu0S4JFcm8SJ09GfWXYOwutreVrjjq7Fns61ggw9u2ZHoRnNQvQgw5KqzAQkCeCdSImksPTZKM1FlWvU1kQadFOhaD"
+                width="130"
                 height="50"
-                className="d-inline-block align-top"
+                className="d-inline-block align-top imgLogo"
                 alt="React Bootstrap logo"
               />
             </Link>
