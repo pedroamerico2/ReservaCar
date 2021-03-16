@@ -2,9 +2,9 @@
 
 Esse projeto tem como intuito simplificar a vida de empresas que realizam a reserva de carros para um setor interno de frota, utilizando firebase e a lib React.
 
-## Available Scripts
+## Scripts disponiveis
 
-In the project directory, you can run:
+Nesse projeto vc consegue rodar:
 
 ### `yarn start`
 
