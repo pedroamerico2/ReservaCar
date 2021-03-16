@@ -155,6 +155,7 @@ export default function Panel() {
           <FormControl
             type="text"
             style={{ width: "15%", float: "right", borderRadius: "0px" }}
+            placeholder="Busca: modelo.. ou marca..."
             value={searchOnList}
             onChange={(e) => setSearchOnList(e.target.value)}
           />
