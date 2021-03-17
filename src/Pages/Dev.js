@@ -67,6 +67,7 @@ export default function Dev() {
         <div style={{ width: "100%", height: "100px" }}>
           <Row className="mx-auto" style={{ width: "50%", heigth: "30px" }}>
             <a
+              target="_blank"
               className="mt-2 mx-auto"
               style={{ height: "50px" }}
               href="https://www.linkedin.com/in/pedro-am%C3%A9rico-a3292393/"
@@ -79,6 +80,7 @@ export default function Dev() {
               />
             </a>
             <a
+              target="_blank"
               className="mt-2 mx-auto"
               style={{ height: "50px" }}
               href="https://api.whatsapp.com/send?phone=5577988357722&text=Gostei do seu Sistema"
@@ -91,6 +93,7 @@ export default function Dev() {
               />
             </a>
             <a
+              target="_blank"
               className="mt-2 mx-auto"
               style={{ height: "50px" }}
               href="https://github.com/pedroamerico2"
