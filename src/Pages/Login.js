@@ -33,20 +33,25 @@ function Login({ history }) {
   return (
     <Container
       className="bg-light-transparency text-dark rounded py-4 login-box my-5"
-      style={{ "max-width": "400px", maxHeigth: "400px" }}
+      style={{ maxWidth: "500px", maxHeigth: "400px" }}
     >
-      <Form onSubmit={handleLogin}>
-        <h1 className="text-center">
-          <Container className="border-0">
-            <img
-              src="http://sirtec.com.br/wp-content/themes/sirtec/images/sirtec_logo.png"
-              width="200"
-              height="100"
-              className="d-inline-block align-top mb-5 mt-5"
-              alt="React Bootstrap logo"
-            />
-          </Container>
-        </h1>
+      <img
+        src="https://www.tecnosinos.com.br/wp-content/uploads/2019/01/129-1.png"
+        width="450px"
+        height="142px"
+        style={{ borderRadius: "0% !important" }}
+        className="d-inline-block align-top mb-5 mt-5"
+        alt="React Bootstrap logo"
+      />
+      <Form
+        onSubmit={handleLogin}
+        style={{
+          width: "300px",
+          heigth: "20px",
+          margin: "0 auto",
+        }}
+        className=""
+      >
         <Form.Group>
           <Form.Control
             name="email"
