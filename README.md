@@ -16,6 +16,6 @@ You will also see any lint errors in the console.
 
 ## Teste você mesmo:
 
-#### Link: [sirtec-63c98.web.app/](sirtec-63c98.web.app/)
+#### Link: [https://sirtec-63c98.web.app/](sirtec-63c98.web.app/)
 login: teste@pedro.com
 senha: 123456789
